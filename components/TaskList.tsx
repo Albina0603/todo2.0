@@ -1,5 +1,6 @@
 "use client";
 
+import { Edit } from "lucide-react";
 import TaskItem from "./TaskItem";
 
 interface Task {
@@ -12,12 +13,14 @@ interface TaskListProps {
   tasks: Task[];
   toggleTask: (id: number) => void;
   deleteTask: (id: number) => void;
+  EditTask: (id: number) =>void;
 }
 
 export default function TaskList({
   tasks,
   toggleTask,
   deleteTask,
+  EditTask,
 }: TaskListProps) {
   return (
     <ul className="space-y-2">
@@ -27,6 +30,7 @@ export default function TaskList({
           task={task}
           toggleTask={toggleTask}
           deleteTask={deleteTask}
+          EditTask={EditTask}
         />
       ))}
     </ul>

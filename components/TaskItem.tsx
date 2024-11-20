@@ -11,6 +11,7 @@ interface TaskItemProps {
   };
   toggleTask: (id: number) => void;
   deleteTask: (id: number) => void;
+  EditTask: (id: number) =>void;
 }
 
 export default function TaskItem({

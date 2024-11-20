@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Trash2 } from "lucide-react";
+import { Check, Pencil, Trash2, Trash2Icon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface TaskItemProps {
@@ -18,6 +18,10 @@ export default function TaskItem({
   toggleTask,
   deleteTask,
 }: TaskItemProps) {
+  function EditTask(id: number): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <li
       className={`flex items-center justify-between p-2 rounded ${
@@ -32,14 +36,26 @@ export default function TaskItem({
         {task.text}
       </span>
       <div>
-        <Button
-          onClick={() => toggleTask(task.id)}
+      <Button
+          onClick={() => EditTask(task.id)}
           className="mr-2"
           variant="outline"
           size="icon"
           aria-label={
             task.completed ? "Mark as incomplete" : "Mark as complete"
           }
+        >
+          <Pencil
+            className={`w-4 h-4 ${
+              task.completed ? "text-green-500" : "text-gray-500"
+            }`}
+          />
+        </Button>
+        <Button
+          onClick={() => toggleTask(task.id)}
+          className="mr-2"
+          variant="outline"
+          size="icon"
         >
           <Check
             className={`w-4 h-4 ${
@@ -54,7 +70,7 @@ export default function TaskItem({
           aria-label="Delete task"
         >
           <Trash2 className="w-4 h-4 text-red-500" />
-        </Button>
+        </Button>    
       </div>
     </li>
   );

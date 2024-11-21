@@ -30,7 +30,7 @@ export default function TaskList({
           task={task}
           toggleTask={toggleTask}
           deleteTask={deleteTask}
-          EditTask={EditTask}
+          editTask={EditTask}
         />
       ))}
     </ul>

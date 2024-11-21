@@ -34,7 +34,9 @@ export default function Todo() {
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold mb-4 text-gray-800">Todoist Clone</h1>
       <TaskForm addTask={addTask} />
-      <TaskList tasks={tasks} toggleTask={toggleTask} deleteTask={deleteTask} />
+      <TaskList tasks={tasks} toggleTask={toggleTask} deleteTask={deleteTask} EditTask={function (id: number): void {
+        throw new Error("Function not implemented.");
+      } } />
     </div>
   );
 }
